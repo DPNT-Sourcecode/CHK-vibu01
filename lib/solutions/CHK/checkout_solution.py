@@ -41,10 +41,11 @@ def checkout(skus):
    def multi_offer_one_free(sku,quanity,free_sku):
        number_of_sku = count_of_skus[sku]
        sku_offer_count = (number_of_sku / quanity)
-
+       print sku_offer_count
        if sku_offer_count >= 1:
            remainder = count_of_skus[sku] % quanity
-           count_of_skus[free_sku] = count_of_skus[free_sku] 
+           print count_of_skus[free_sku]
+           count_of_skus[free_sku] = count_of_skus[free_sku] - sku_offer_count
        return cost
 
    if "A" in list_of_skus:
@@ -67,7 +68,6 @@ def checkout(skus):
 
    print count_of_skus
    for sku,value in count_of_skus.iteritems():
-
         cost += value *price[sku]
 
 

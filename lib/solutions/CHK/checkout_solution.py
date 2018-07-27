@@ -34,7 +34,7 @@ def checkout(skus):
        if sku_offer_count >= 1:
            remainder = count_of_skus[sku] % quanity
            count_of_skus[sku] = remainder
-
+       print cost
        return cost
 
 
@@ -59,13 +59,17 @@ def checkout(skus):
 
 
     if count_of_skus["E"] >= 2:
+        print "1"
         multi_offer_one_free("E", 2, "B")
     else :
+         print "2"
          multi_offer("B", 2, 45, cost)
    elif "E" in list_of_skus:
-       multi_offer_one_free("E", 2, "B")
+        print "3"
+        multi_offer_one_free("E", 2, "B")
    elif "B" in list_of_skus:
-       multi_offer("B", 2, 45, cost
+        print "Just B"
+        multi_offer("B", 2, 45, cost)
 
 
 

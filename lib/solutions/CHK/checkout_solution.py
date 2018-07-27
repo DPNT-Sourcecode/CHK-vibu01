@@ -34,18 +34,21 @@ def checkout(skus):
        return cost
 
 
-   def multi_offer_one_free(sku,quanity,free_sku, price,cost):
+   def multi_offer_one_free(sku,quanity,free_sku):
        number_of_sku = count_of_skus[sku]
        sku_offer_count = (number_of_sku / quanity)
-       cost += (sku_offer_count) * price
        if sku_offer_count >= 1:
            remainder = count_of_skus[sku] % quanity
-           count_of_skus[sku] = remainder
+           count_of_skus[free_sku] = count_of_skus[free_sku] - sku_offer_count
        return cost
    if "A" in list_of_skus:
     cost = multi_offer("A",3,130,cost)
    if "B" in list_of_skus:
     cost = multi_offer("B", 2, 45, cost)
+   if "B" in list_of_skus:
+    cost = multi_offer("B", 2, 45, cost)
+   if "E" and "B" in list_of_skus:
+    multi_offer_one_free("E", 2, "B")
 
 
 
@@ -59,7 +62,7 @@ def checkout(skus):
 
    return cost
 
-print checkout("EE")
+print checkout("EEBBB")
 
 
 

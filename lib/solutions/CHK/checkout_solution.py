@@ -1,4 +1,4 @@
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus):
-   pass
+   list_of_skus = skus.split("")

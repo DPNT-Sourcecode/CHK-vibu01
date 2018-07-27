@@ -14,13 +14,12 @@ def checkout(skus):
    number_of_a = count_of_skus["A"]
    number_of_b= count_of_skus["B"]
    b_offer_count =  (number_of_b / 2)
-   print (number_of_b )
-   print count_of_skus
+   cost =  (b_offer_count) * 45
 
    if b_offer_count > 1:
-       count_of_skus["B"] = count_of_skus["B"] - (number_of_b * 2)
+       count_of_skus["B"] = count_of_skus["B"] % 2
    print count_of_skus
-   cost = 0
+   
    for sku in list_of_skus:
         cost += price[sku]
         print cost

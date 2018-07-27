@@ -23,8 +23,9 @@ def checkout(skus):
        count_of_skus["B"] = remainder
    print count_of_skus
 
-   {key: value for item in list if conditional}
-   for sku in list_of_skus:
+
+   for sku in count_of_skus:
+        print sku[0]
         cost += price[sku]
         print cost
 

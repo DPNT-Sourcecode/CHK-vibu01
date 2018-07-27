@@ -24,10 +24,11 @@ def checkout(skus):
 
    a_offer_count =  (number_of_a / 3)
    cost =  (a_offer_count) * 130
-   print a_offer_count
+
    if a_offer_count >= 1:
        try:
-           remainder = count_of_skus["B"] % 3
+           remainder = count_of_skus["A"] % 3
+           print "remainder" + str(remainder)
            count_of_skus["A"] = remainder
        except KeyError:
            pass
@@ -38,8 +39,10 @@ def checkout(skus):
    if b_offer_count >= 1:
        try:
             remainder = count_of_skus["B"] % 2
+
             count_of_skus["B"] = remainder
        except KeyError:
+
            pass
 
    print count_of_skus
@@ -50,6 +53,6 @@ def checkout(skus):
 
    return cost
 
-print checkout("AAAA")
+print checkout("AAA")
 
 

@@ -4,6 +4,7 @@ from collections import Counter
 
 def checkout(skus):
    list_of_skus = list(skus)
+   list_of_skus = [sku.upper() for sku in list_of_skus]
    count_of_skus = dict(Counter(list_of_skus))
 
    non_alphabetical_skus =  [sku for sku in skus if not sku.isalpha()]

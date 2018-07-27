@@ -12,12 +12,13 @@ def checkout(skus):
 
    price = {"A":50,"B":30,"C":20,"D":15}
    number_of_a = count_of_skus["A"]
-   number_of_a= count_of_skus["B"]
+   number_of_b= count_of_skus["B"]
+   print number_of_b / 2
    cost = 0
    for sku in list_of_skus:
         cost += price[sku]
         print cost
 
-checkout("AB")
+checkout("ABBBBB")
 
 

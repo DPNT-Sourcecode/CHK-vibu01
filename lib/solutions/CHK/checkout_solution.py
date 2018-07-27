@@ -47,6 +47,7 @@ def checkout(skus):
     cost = multi_offer("B", 2, 45, cost)
    if "B" in list_of_skus:
     cost = multi_offer("B", 2, 45, cost)
+   print list_of_skus
    if "E" and "B" in list_of_skus:
     multi_offer_one_free("E", 2, "B")
 
@@ -62,7 +63,7 @@ def checkout(skus):
 
    return cost
 
-print checkout("EEBBB")
+print checkout("BB")
 
 
 

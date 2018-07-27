@@ -10,7 +10,14 @@ def checkout(skus):
    if non_alphabetical_skus:
        return -1
 
-   
-   number_of_A = count_of_skus["A"]
-   number_of_B= count_of_skus["B"]
-checkout("ABCDABCD")
+   price = {"A":50,"B":30,"C":20,"D":15}
+   number_of_a = count_of_skus["A"]
+   number_of_a= count_of_skus["B"]
+   cost = 0
+   for sku in list_of_skus:
+        cost += price[sku]
+        print cost
+
+checkout("AB")
+
+

@@ -11,6 +11,7 @@ def checkout(skus):
            return -1
 
    count_of_skus = dict(Counter(list_of_skus))
+   print count_of_skus
    price = {"A":50,"B":30,"C":20,"D":15,"E":40}
    cost = 0
 
@@ -40,9 +41,10 @@ def checkout(skus):
    def multi_offer_one_free(sku,quanity,free_sku):
        number_of_sku = count_of_skus[sku]
        sku_offer_count = (number_of_sku / quanity)
+
        if sku_offer_count >= 1:
            remainder = count_of_skus[sku] % quanity
-           count_of_skus[free_sku] = count_of_skus[free_sku] - sku_offer_count
+           count_of_skus[free_sku] = count_of_skus[free_sku] 
        return cost
 
    if "A" in list_of_skus:
@@ -52,8 +54,6 @@ def checkout(skus):
             if count_of_skus["A"] >= 3:
                 cost = multi_offer("A",3,130,cost)
 
-   if "B" in list_of_skus:
-    cost = multi_offer("B", 2, 45, cost)
    if "B" in list_of_skus:
     cost = multi_offer("B", 2, 45, cost)
 
@@ -73,3 +73,7 @@ def checkout(skus):
 
    return cost
 
+print checkout("EEEEBB")
+ # - {"method":"checkout","params":["EEEEBB"],"id":"CHK_R2_027"}, expected: 160, got: 145
+ # - {"method":"checkout","params":["BEBEEE"],"id":"CHK_R2_028"}, expected: 160, got: 145
+ # - {"method":"checkout","params":["ABCDEABCDE"],"id":"CHK_R2_039"}, expected: 280, got: 265

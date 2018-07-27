@@ -31,6 +31,7 @@ def checkout(skus):
        if sku_offer_count >= 1:
            remainder = count_of_skus[sku] % quanity
            count_of_skus[sku] = remainder
+       print cost
        return cost
 
 
@@ -61,13 +62,16 @@ def checkout(skus):
 
    print count_of_skus
    for sku,value in count_of_skus.iteritems():
+        print value
         cost += value *price[sku]
 
 
    return cost
 
 
-
-
-
-
+checkout("AAAAAAAA")
+ #
+ # - {"method":"checkout","params":["AAAAAAAA"],"id":"CHK_R2_021"}, expected: 330, got: 350
+ # - {"method":"checkout","params":["AAAAAAAAA"],"id":"CHK_R2_022"}, expected: 380, got: 400
+ # - {"method":"checkout","params":["EEEEBB"],"id":"CHK_R2_027"}, expected: 160, got: 145
+ #

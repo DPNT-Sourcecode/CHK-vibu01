@@ -63,7 +63,6 @@ def checkout(skus):
 
    return cost
 
-print checkout("EEBB")
 
 
 

@@ -20,6 +20,7 @@ def checkout(skus):
    cost = 0
 
    def multi_offer(sku,quanity, price,cost):
+       print cost
        print sku
        number_of_a = count_of_skus[sku]
        print number_of_a
@@ -27,6 +28,7 @@ def checkout(skus):
        a_offer_count = (number_of_a / quanity)
        print a_offer_count
        cost += (a_offer_count) * price
+       print cost
        if a_offer_count >= 1:
            remainder = count_of_skus[sku] % quanity
            print "remainder" + str(remainder)

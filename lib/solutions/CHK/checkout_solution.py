@@ -3,8 +3,12 @@ from collections import Counter
 # skus = unicode string
 
 def checkout(skus):
+   allowed_sku_list = ['A','B','C','D']
    list_of_skus = list(skus)
-   list_of_skus = [sku.upper() for sku in list_of_skus]
+
+   for sku in list_of_skus:
+       sku
+
    count_of_skus = dict(Counter(list_of_skus))
 
    non_alphabetical_skus =  [sku for sku in skus if not sku.isalpha()]
@@ -25,6 +29,7 @@ def checkout(skus):
    a_offer_count =  (number_of_a / 3)
    cost =  (a_offer_count) * 130
 
+
    if a_offer_count >= 1:
        try:
            remainder = count_of_skus["A"] % 3
@@ -34,7 +39,7 @@ def checkout(skus):
            pass
 
    b_offer_count =  (number_of_b / 2)
-   cost =  (b_offer_count) * 45
+   cost =  cost + (b_offer_count) * 45
 
    if b_offer_count >= 1:
        try:

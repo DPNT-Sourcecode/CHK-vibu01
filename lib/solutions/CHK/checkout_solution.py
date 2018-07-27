@@ -22,7 +22,7 @@ def checkout(skus):
    except KeyError:
        number_of_b = 0
 
-   a_offer_count =  (number_of_b / 3)
+   a_offer_count =  (number_of_a / 3)
    cost =  (a_offer_count) * 130
 
    if a_offer_count >= 1:
@@ -38,11 +38,11 @@ def checkout(skus):
 
 
    for sku,value in count_of_skus.iteritems():
-        try:
-            cost += value *price[sku]
-        except KeyError:
-            return -1
+        cost += value *price[sku]
+
 
    return cost
+
+print checkout("AAA")
 
 

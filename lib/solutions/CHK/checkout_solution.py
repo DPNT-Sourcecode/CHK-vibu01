@@ -42,6 +42,5 @@ def checkout(skus):
    return cost
 
 
-checkout("AAABB")
 
 

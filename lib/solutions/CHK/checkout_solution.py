@@ -24,25 +24,32 @@ def checkout(skus):
 
    a_offer_count =  (number_of_a / 3)
    cost =  (a_offer_count) * 130
-
+   print a_offer_count
    if a_offer_count >= 1:
-       remainder = count_of_skus["B"] % 3
-       count_of_skus["A"] = remainder
+       try:
+           remainder = count_of_skus["B"] % 3
+           count_of_skus["A"] = remainder
+       except KeyError:
+           pass
 
    b_offer_count =  (number_of_b / 2)
    cost =  (b_offer_count) * 45
 
    if b_offer_count >= 1:
-       remainder = count_of_skus["B"] % 2
-       count_of_skus["B"] = remainder
+       try:
+            remainder = count_of_skus["B"] % 2
+            count_of_skus["B"] = remainder
+       except KeyError:
+           pass
 
-
+   print count_of_skus
    for sku,value in count_of_skus.iteritems():
+        print value
         cost += value *price[sku]
 
 
    return cost
 
-print checkout("AAA")
+print checkout("AAAA")
 
 

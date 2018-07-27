@@ -42,7 +42,10 @@ def checkout(skus):
            count_of_skus[free_sku] = count_of_skus[free_sku] - sku_offer_count
        return cost
    if "A" in list_of_skus:
-    cost = multi_offer("A",3,130,cost)
+       if count_of_skus["A"] > 3:
+        cost = multi_offer("A",5,200,cost)
+       else:
+           cost = multi_offer("A", 3, 130, cost)
    if "B" in list_of_skus:
     cost = multi_offer("B", 2, 45, cost)
    if "B" in list_of_skus:

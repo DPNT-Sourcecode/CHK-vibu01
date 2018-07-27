@@ -19,38 +19,22 @@ def checkout(skus):
    price = {"A":50,"B":30,"C":20,"D":15,"E":40}
    cost = 0
 
-   def multi_offer(sku, quanity, price,cost):
-       number_of_a = count_of_skus["A"]
-       a_offer_count = (number_of_a / 3)
-       cost += (a_offer_count) * 130
+   def multi_offer(sku,quanity, price,cost):
+       print sku
+       number_of_a = count_of_skus[sku]
+       print number_of_a
+
+       a_offer_count = (number_of_a / quanity)
+       print a_offer_count
+       cost += (a_offer_count) * price
        if a_offer_count >= 1:
-           remainder = count_of_skus["A"] % 3
+           remainder = count_of_skus[sku] % quanity
            print "remainder" + str(remainder)
-           count_of_skus["A"] = remainder
+           count_of_skus[sku] = remainder
        return cost
 
-   print multi_offer("A",3,130,cost)
-   # if "A" in list_of_skus:
-   #  number_of_a = count_of_skus["A"]
-   #  a_offer_count = (number_of_a / 3)
-   #  cost += (a_offer_count) * 130
-   #  if a_offer_count >= 1:
-   #      remainder = count_of_skus["A"] % 3
-   #      print "remainder" + str(remainder)
-   #      count_of_skus["A"] = remainder
-   # print "cost " + str(cost)
-
-   if "B" in list_of_skus:
-    number_of_b = count_of_skus["B"]
-    b_offer_count = (number_of_b / 2)
-    cost +=  (b_offer_count) * 45
-    if b_offer_count >= 1:
-        remainder = count_of_skus["B"] % 2
-        print "remainder" + str(remainder)
-        count_of_skus["B"] = remainder
-
-
-
+   cost += multi_offer("A",3,130,cost)
+   cost += multi_offer("B", 2, 45, cost)
 
 
 

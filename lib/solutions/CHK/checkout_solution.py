@@ -61,8 +61,6 @@ def checkout(skus):
         cost = multi_offer_one_free("E", 2, "B")
     else :
          cost =multi_offer("B", 2, 45, cost)
-   elif "E" in list_of_skus:
-        cost = multi_offer_one_free("E", 2, "B")
    elif "B" in list_of_skus:
         cost = multi_offer("B", 2, 45, cost)
 
@@ -78,9 +76,3 @@ def checkout(skus):
 
 
    return cost
-
-
-
-# - {"method": "checkout", "params": ["BB"], "id": "CHK_R2_036"}, expected: 45, got: 60
-# - {"method": "checkout", "params": ["BBB"], "id": "CHK_R2_037"}, expected: 75, got: 90
-# - {"method": "checkout", "params": ["BBBB"], "id": "CHK_R2_038"}, expected: 90, got: 120

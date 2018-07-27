@@ -7,13 +7,14 @@ def checkout(skus):
    list_of_skus = list(skus)
 
    for sku in list_of_skus:
-       sku
+       if sku not in allowed_sku_list:
+           return -1
+
 
    count_of_skus = dict(Counter(list_of_skus))
 
-   non_alphabetical_skus =  [sku for sku in skus if not sku.isalpha()]
-   if non_alphabetical_skus:
-       return -1
+
+
 
    price = {"A":50,"B":30,"C":20,"D":15}
    try:
@@ -58,6 +59,6 @@ def checkout(skus):
 
    return cost
 
-print checkout("AAA")
+
 
 

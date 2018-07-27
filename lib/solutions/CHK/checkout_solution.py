@@ -38,10 +38,11 @@ def checkout(skus):
 
 
    for sku,value in count_of_skus.iteritems():
-        cost += value *price[sku]
+        try:
+            cost += value *price[sku]
+        except KeyError:
+            return -1
 
    return cost
-
-
 
 

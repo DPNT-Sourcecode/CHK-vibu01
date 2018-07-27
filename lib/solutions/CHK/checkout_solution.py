@@ -10,5 +10,7 @@ def checkout(skus):
    if non_alphabetical_skus:
        return -1
 
-   print count_of_skus("A")
-checkout("ABCDABCD2")
+   
+   number_of_A = count_of_skus["A"]
+   number_of_B= count_of_skus["B"]
+checkout("ABCDABCD")

@@ -65,16 +65,18 @@ def checkout(skus):
        for apply in range(0, apply_count):
            multi_offer_one_free("E", 2, "B")
            print count_of_skus
+   try:
+       if count_of_skus["B"] > 0:
+           print "B was found " + str(list_of_skus.count("B")) + " times."
+           apply_count = list_of_skus.count("B") / 2
+           print "The B offer can be applied " + str(apply_count)
 
-   if count_of_skus["B"] > 0:
-       print "B was found " + str(list_of_skus.count("B")) + " times."
-       apply_count = list_of_skus.count("B") / 2
-       print "The B offer can be applied " + str(apply_count)
-
-       for apply in range(0,apply_count):
-           cost = multi_offer("B",2,45,cost)
-           print count_of_skus
-           print cost
+           for apply in range(0,apply_count):
+               cost = multi_offer("B",2,45,cost)
+               print count_of_skus
+               print cost
+   except KeyError:
+       pass
 
 
 
@@ -90,4 +92,3 @@ def checkout(skus):
 
 
    return cost
-

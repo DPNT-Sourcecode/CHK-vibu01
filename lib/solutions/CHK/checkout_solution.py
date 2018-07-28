@@ -71,7 +71,7 @@ def checkout(skus):
    #         print "The cost is " + str(cost)
    #         print "SKUS After " + str(count_of_skus)
 
-   if list_of_skus.count("E"):
+   if list_of_skus.count("E") >= 2 and list_of_skus.count("B"):
        print "E was found " + str(list_of_skus.count("E")) + " times."
        apply_count = list_of_skus.count("E") / 2
        print "The E offer can be applied " + str(apply_count)
@@ -80,7 +80,7 @@ def checkout(skus):
            multi_offer_one_free("E", 2, "B")
            print count_of_skus
 
-   if list_of_skus.count("B"):
+   if count_of_skus["B"] > 0:
        print "B was found " + str(list_of_skus.count("B")) + " times."
        apply_count = list_of_skus.count("B") / 2
        print "The B offer can be applied " + str(apply_count)

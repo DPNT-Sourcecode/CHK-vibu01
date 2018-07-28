@@ -169,4 +169,5 @@ def checkout(skus):
 
 
    return cost
-
+ #- {"method":"checkout","params":["PPPPQRUVPQRUVPQRUVSU"],"id":"CHK_R4_001"}, expected: 740, got: 730
+print checkout("PPPPQRUVPQRUVPQRUVSU")

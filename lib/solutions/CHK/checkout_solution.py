@@ -50,34 +50,58 @@ def checkout(skus):
         while count_of_skus["A"] >= 3:
             if count_of_skus["A"] >= 5:
                 cost = multi_offer("A", 5, 200, cost)
+
             if count_of_skus["A"] >= 3:
                 cost = multi_offer("A",3,130,cost)
 
+   print cost
+   # if "B" in list_of_skus:
+   #     while count_of_skus["B"] >= 2 :
+   #         print "2 or More Bs"
+   #
+   #         print "SKUS Before " + str(count_of_skus)
+   #         try:
+   #             if count_of_skus["B"] > count_of_skus["E"]:
+   #                 print "More Bs than Es"
+   #                 multi_offer_one_free("E", 2, "B")
+   #             else:
+   #                 cost = multi_offer("B", 2, 45, cost)
+   #         except KeyError:
+   #             cost = multi_offer("B", 2, 45, cost)
+   #         print "The cost is " + str(cost)
+   #         print "SKUS After " + str(count_of_skus)
 
-   if "E" in list_of_skus and "B" in list_of_skus:
+   if list_of_skus.count("E"):
+       print "E was found " + str(list_of_skus.count("E")) + " times."
+       apply_count = list_of_skus.count("E") / 2
+       print "The E offer can be applied " + str(apply_count)
+
+       for apply in range(0, apply_count):
+           multi_offer_one_free("E", 2, "B")
+           print count_of_skus
+
+   if list_of_skus.count("B"):
+       print "B was found " + str(list_of_skus.count("B")) + " times."
+       apply_count = list_of_skus.count("B") / 2
+       print "The B offer can be applied " + str(apply_count)
+
+       for apply in range(0,apply_count):
+           cost = multi_offer("B",2,45,cost)
+           print count_of_skus
+           print cost
 
 
-    if count_of_skus["E"] >= 2:
-        cost = multi_offer_one_free("E", 2, "B")
-    else :
-         cost =multi_offer("B", 2, 45, cost)
-   elif "B" in list_of_skus:
-        cost = multi_offer("B", 2, 45, cost)
 
 
 
 
-
-
+   print "The final cost is " + str(cost)
    print count_of_skus
    for sku,value in count_of_skus.iteritems():
 
         cost += value *price[sku]
+        print sku + " " +str(value) + " x " + str(price[sku])
 
 
    return cost
 
-print checkout("AAAAAEEBAAABB")
-
-#- {"method": "checkout", "params": ["AAAAAEEBAAABB"], "id": "CHK_R2_041"}, expected: 455, got: 470
-#- {"method": "checkout", "params": ["ABCDECBAABCABBAAAEEAA"], "id": "CHK_R2_001"}, expected: 665, got: 695

@@ -62,9 +62,8 @@ def checkout(skus):
        apply_count = list_of_skus.count("E") / 2
        print "The E offer can be applied " + str(apply_count)
 
-       for apply in range(0, apply_count):
-           multi_offer_one_free("E", 2, "B")
-           print count_of_skus
+       multi_offer_one_free("E", 2, "B")
+
    try:
        if count_of_skus["B"] > 0:
            print "B was found " + str(list_of_skus.count("B")) + " times."
@@ -92,3 +91,4 @@ def checkout(skus):
 
 
    return cost
+

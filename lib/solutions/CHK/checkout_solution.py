@@ -55,21 +55,7 @@ def checkout(skus):
                 cost = multi_offer("A",3,130,cost)
 
    print cost
-   # if "B" in list_of_skus:
-   #     while count_of_skus["B"] >= 2 :
-   #         print "2 or More Bs"
-   #
-   #         print "SKUS Before " + str(count_of_skus)
-   #         try:
-   #             if count_of_skus["B"] > count_of_skus["E"]:
-   #                 print "More Bs than Es"
-   #                 multi_offer_one_free("E", 2, "B")
-   #             else:
-   #                 cost = multi_offer("B", 2, 45, cost)
-   #         except KeyError:
-   #             cost = multi_offer("B", 2, 45, cost)
-   #         print "The cost is " + str(cost)
-   #         print "SKUS After " + str(count_of_skus)
+
 
    if list_of_skus.count("E") >= 2 and list_of_skus.count("B"):
        print "E was found " + str(list_of_skus.count("E")) + " times."

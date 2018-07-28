@@ -78,6 +78,7 @@ def checkout(skus):
        pass
 
    if list_of_skus.count("F") >= 3:
+       print "F was found " + str(list_of_skus.count("F")) + " times."
        multi_offer_one_free("F", 2, "F")
 
 
@@ -93,3 +94,7 @@ def checkout(skus):
 
    return cost
 
+# - {"method":"checkout","params":["FFFF"],"id":"CHK_R3_042"}, expected: 30, got: 20
+# - {"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_043"}, expected: 40, got: 30
+# - {"method":"checkout","params":["FFFFFF"],"id":"CHK_R3_044"}, expected: 40, got: 30#
+print checkout("FFFF")

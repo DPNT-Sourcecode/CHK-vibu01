@@ -3,7 +3,7 @@ from collections import Counter
 # skus = unicode string
 
 def checkout(skus):
-   allowed_sku_list = ['A','B','C','D','E']
+   allowed_sku_list = ['A','B','C','D','E',"F"]
    list_of_skus = list(skus)
 
    for sku in list_of_skus:
@@ -12,7 +12,7 @@ def checkout(skus):
 
    count_of_skus = dict(Counter(list_of_skus))
    print count_of_skus
-   price = {"A":50,"B":30,"C":20,"D":15,"E":40}
+   price = {"A":50,"B":30,"C":20,"D":15,"E":40,"F":10}
    cost = 0
 
    def multi_offer(sku,quanity, price,cost):
@@ -77,7 +77,8 @@ def checkout(skus):
    except KeyError:
        pass
 
-
+   if list_of_skus.count("F") >= 3:
+       multi_offer_one_free("F", 2, "F")
 
 
 
